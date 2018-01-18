@@ -2,7 +2,7 @@ import * as Abstract from 'abstract-leveldown';
 
 declare namespace rocksdb {
   export interface RocksDB<TKey, TValue>
-    extends Abstract.LevelDOWN<
+    extends Abstract.AbstractLevelDOWN<
     TKey,
     TValue,
     RocksDBOptions,
@@ -52,7 +52,7 @@ declare namespace rocksdb {
     sync?: boolean;
   }
 
-  export interface RocksDBIterator<TKey> extends Abstract.Iterator {
+  export interface RocksDBIterator<TKey> extends Abstract.AbstractIterator {
     seek(key: TKey);
     binding: any;
     cache: any;
